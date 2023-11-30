@@ -1,4 +1,0 @@
-1. web link :- https://codepen.io/EmmaJD/pen/rQBqQp
-2. jquery.min.js :- https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
-3. typed.min.js :- //cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js
-
