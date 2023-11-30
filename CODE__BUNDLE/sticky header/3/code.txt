@@ -1,0 +1,46 @@
+//HTML
+<header class="sticky">Text here</header>
+
+
+//CSS
+ header {
+        padding: 20px 0px;
+        background: gray;
+        width: 100%;
+        /* -webkit-transition: all 0.5s ease;
+        -moz-transition: position 10s;
+        -ms-transition: position 10s;
+        -o-transition: position 10s;
+        transition: all 0.5s ease; */
+    }
+    .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: smoothScroll 1s forwards;
+    }
+    @keyframes smoothScroll {
+        0% {
+            transform: translateY(-100px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+
+//jQuery
+$(window).scroll(function () {
+        var sticky = $('.sticky'),
+            scroll = $(window).scrollTop();
+        if (scroll >= 200) {
+            sticky.addClass('fixed');
+        }
+        else {
+            sticky.removeClass('fixed');
+        }
+    });
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+

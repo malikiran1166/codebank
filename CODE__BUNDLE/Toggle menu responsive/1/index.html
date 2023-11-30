@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<style>
+    .menu-toggle {
+        display: flex;
+        flex-wrap: wrap;
+        width: 40px;
+        height: 26px !important;
+        z-index: 9;
+        position: relative;
+        top: 0;
+        margin-left: auto;
+        display: none;
+    }
+
+    .menu-toggle span {
+        width: 30px;
+        height: 4px;
+        background: #3e3f66;
+        margin: 0px auto;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+    }
+
+    .menu-toggle.on .bar1 {
+        transform: rotate(45deg) translate(0px, 5px);
+    }
+
+    .menu-toggle.on .bar2 {
+        opacity: 0;
+    }
+
+    .menu-toggle.on .bar3 {
+        transform: rotate(-45deg) translate(7px, -12px);
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        .navbar {
+            display: none;
+            max-height: 100vh;
+            overflow-y: auto;
+            position: absolute;
+            width: 100%;
+            top: 1%;
+            right: 0;
+            z-index: 9;
+        }
+
+        .navbar ul {
+            display: block;
+            padding: 20px 15px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px #ede9fe;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            display: block;
+            margin: 5px;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $(".menu-toggle").click(function () {
+            $(this).toggleClass("on");
+            $(".navbar").slideToggle();
+        });
+    });
+</script>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </div>
+    </header>
+</body>
+
+</html>

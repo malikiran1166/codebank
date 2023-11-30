@@ -1,0 +1,32 @@
+//jQuery
+$(document).scroll(function() {
+        if ($(this).scrollTop() > 30) {
+            $('header').addClass("sticky");
+        } else {
+            $('header').removeClass("sticky");
+        }
+        var y = $(this).scrollTop();
+        if (y > 500) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+
+
+//CSS
+header.sticky {
+  background-color: #fff;
+  position: fixed;
+  animation: headerSticky 0.95s ease forwards;
+}
+
+@keyframes headerSticky {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

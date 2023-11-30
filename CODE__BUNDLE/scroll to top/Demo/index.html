@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll top demo</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<style>
+    /* for demo */
+    .section {
+        padding-top: 250px;
+        padding-bottom: 250px;
+    }
+    .section1 {
+        background-color: red;
+    }
+    .section2 {
+        background-color: yellow;
+    }
+    .section3 {
+        background-color: aquamarine;
+    }
+    .section4 {
+        background-color: bisque;
+    }
+    /*  */
+
+    /* use */
+    .scrolltop {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background-color: #000;
+        color: #fff;
+        padding: 10px 14px 2px 14px;
+        font-size: 25px;
+        border-radius: 5px;
+        opacity: 0.8;
+        display: none;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $(".scrolltop").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+        var offSetTop = 500;
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > offSetTop) {
+                $(".scrolltop").fadeIn();
+            } else {
+                $(".scrolltop").fadeOut();
+            }
+        });
+    });
+
+</script>
+
+<body>
+    <div class="content-wrapper">
+        <div class="section section1"></div>
+        <div class="section section2"></div>
+        <div class="section section3"></div>
+        <div class="section section4"></div>
+        <a class="scrolltop">^</a>
+    </div>
+</body>
+
+</html>

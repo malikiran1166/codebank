@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<script>
+    $(window).scroll(function () {
+        var sticky = $('.sticky'),
+            scroll = $(window).scrollTop();
+
+        if (scroll >= 200) {
+            sticky.addClass('fixed');
+        }
+        else {
+            sticky.removeClass('fixed');
+
+        }
+    });
+</script>
+
+<style>
+    header {
+        padding: 20px 0px;
+        background: gray;
+        width: 100%;
+
+        /* -webkit-transition: all 0.5s ease;
+        -moz-transition: position 10s;
+        -ms-transition: position 10s;
+        -o-transition: position 10s;
+        transition: all 0.5s ease; */
+    }
+
+    section {
+        height: 150vh;
+    }
+    .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: smoothScroll 1s forwards;
+    }
+    @keyframes smoothScroll {
+        0% {
+            transform: translateY(-100px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+</style>
+
+
+
+<body>
+    <header class="sticky">Text here</header>
+    <section>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake
+        dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon candy
+        marzipan bonbon gummies chocolate cake
+        gummi bears powder. Unerdwear.com tart halvah chocolate cake dragée liquorice. Sugar plum chocolate bar pastry
+        liquorice dragée jelly powder. Jelly tootsie roll applicake caramels. Marzipan candy tootsie roll donut. Gummies
+        ice cream macaroon applicake.</section>
+</body>
+
+</html>
