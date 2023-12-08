@@ -1,0 +1,65 @@
+||	--jQuery--	||
+
+        $(document).ready(function() {
+            $(".accordian-block h3").click(function() {
+                $(this).toggleClass('active');
+                $(this).next().slideToggle();
+            });
+        });
+
+
+||	--CSS--		||
+
+        .accordian-block h3 {
+            background-color: #eee;
+            color: #444;
+            padding: 15px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            cursor: pointer;
+            position: relative;
+        }        
+        .accordian-block h3.active {
+            background-color: rgb(193, 193, 193);
+        }        
+        .accordian-block h3:hover {
+            background-color: rgb(193, 193, 193);
+        }        
+        .accordian__content {
+            display: none;
+            padding: 10px;
+        }        
+        .accordian-block {
+            margin: 5px 5px;
+        }        
+        .accordian-block h3::after {
+            content: '+';
+            position: absolute;
+            top: 30%;
+            right: 15px;
+        }        
+        .accordian-block .active::after {
+            content: '-';
+        }
+
+||	--HTML--	||
+
+    <h1>Accordion</h1>
+    <div class="accordian-block">
+        <h3>Section 1</h3>
+        <div class="accordian__content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>            
+        </div>
+    </div>
+    <div class="accordian-block">
+        <h3>Section 2</h3>
+        <div class="accordian__content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>            
+        </div>
+    </div>
+    <div class="accordian-block">
+        <h3>Section 3</h3>
+        <div class="accordian__content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>            
+        </div>
+    </div>
