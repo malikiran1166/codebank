@@ -2,8 +2,12 @@
 
         $(document).ready(function() {
             $(".accordian-block h3").click(function() {
-                $(this).toggleClass('active');
-                $(this).next().slideToggle();
+                 $('.active').not(this).removeClass('active');
+        $(this).toggleClass('active');
+        if (false == $(this).next().is(':visible')) {
+            $('.accordian__content').slideUp(300);
+        }
+        $(this).next().slideToggle(300);
             });
         });
 

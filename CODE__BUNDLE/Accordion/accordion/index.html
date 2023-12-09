@@ -9,10 +9,10 @@
     <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            $(".accordian-block h3").click(function() {
-                $(this).toggleClass('active');
-                $(this).next().slideToggle();
-            });
+            $(".accordian-block h3").click(function () {
+        $(".open").not(this).removeClass("open").next().slideUp(300);
+        $(this).toggleClass("open").next().slideToggle(300);
+    });
         });
     </script>
 
